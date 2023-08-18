@@ -1,8 +1,11 @@
-clc
-clear all
+clc;
+clear all;
+close all;
+
 x = [1, 2, 3, 4];
 h = [2 3 4 4];
 y = zeros(1,length(x) + length(h)-1);
+
 for n = 1:length(y)
     for k = 1:length(h)
         if n-k+1>0 && n-k+1 <= length(x)
