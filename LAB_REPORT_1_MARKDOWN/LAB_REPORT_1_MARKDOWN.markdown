@@ -199,21 +199,25 @@ ylim(\[-1, 6\]);
 <br>
 
 **1. A Discrete Signal**
+
 ![](media/image1.png)
 
 <br>
 
 **2. Two Given Continuous Signal**
+
 ![](media/image2.png)
 
 <br>
 
 **3. Two Discrete Signal, Their Addition and Subtraction**
+
 ![](media/image3.png)
 
 <br>
 
 **4. Unit Step, Unit Impulse and Unit Ramp Signal Using Conditions**
+
 ![](media/image4.png)
 
 <br>
