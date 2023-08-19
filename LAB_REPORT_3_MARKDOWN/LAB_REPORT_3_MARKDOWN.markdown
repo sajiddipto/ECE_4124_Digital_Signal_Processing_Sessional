@@ -29,9 +29,9 @@ for delay = -n+1:n-1
 	end
 end
 	 
-	subplot(3,1,1)
-	stem(x);
-	title('General Function');
+subplot(3,1,1)
+stem(x);
+title('General Function');
  
 subplot(3,1,2)
 stem(z);
