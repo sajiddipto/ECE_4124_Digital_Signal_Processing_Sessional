@@ -19,180 +19,121 @@
 **Code:**
 
 **1. A Discrete Signal**
-
+```
 clc;
-
 clear all;
-
 close all;
-
-x=\[5, 3, 7, 3, 2, 3, 5\];
-
-y=\[1 2 3 4 5 6 7\];
-
+ 
+x=[5, 3, 7, 3, 2, 3, 5];
+y=[1 2 3 4 5 6 7];
+ 
 stem(y,x);
+xlim([0, 8]);
+ylim([0, 8]);
 
-xlim(\[0, 8\]);
-
-ylim(\[0, 8\]);
+```
 
 <br>
 
 
 **2. Two Given Continuous Signal**
-
+```
 clc;
-
 clear all;
-
 close all;
-
+ 
 t=0:1:7;
-
-u1 = \[ones(1,1).\*1 ones(1,2).\*2 ones(1,1).\*4 ones(1,1).\*4
-ones(1,2).\*2 ones(1,1)\];
-
+u1 = [ones(1,1).*1 ones(1,2).*2 ones(1,1).*4 ones(1,1).*4 ones(1,2).*2 ones(1,1)];
+ 
 subplot(2,1,1);
-
 plot(t,u1);
-
-xlabel(\'Time\');
-
-ylabel(\'Amplitude\');
-
-title(\'First Signal\');
-
-xlim=(\[0, 8\]);
-
-ylim(\[1, 5\]);
-
+xlabel('Time');
+ylabel('Amplitude');
+title('First Signal');
+xlim=([0, 8]);
+ylim([1, 5]);
+ 
 t=0:1:6;
-
-u2 = \[zeros(1,1) ones(1,5) zeros(1,1)\];
-
+u2 = [zeros(1,1) ones(1,5) zeros(1,1)];
+ 
 subplot(2,1,2);
-
 plot(t,u2);
-
-xlabel(\'Time\');
-
-ylabel(\'Amplitude\');
-
-title(\'Second Signal\');
-
-xlim=(\[0, 7\]);
-
-ylim(\[0, 2\]);
-
+xlabel('Time');
+ylabel('Amplitude');
+title('Second Signal');
+xlim=([0, 7]);
+ylim([0, 2]);
+```
 <br>
 
 **3. Two Discrete Signal, Their Addition and Subtraction**
-
+```
 clc;
-
 clear all;
-
 close all;
-
+ 
 t=-10:1:20;
-
-signal_1= t\>=0 & t\<=10;
-
-signal_2= t\>=5 & t\<=15;
-
+signal_1= t>=0 & t<=10;
+signal_2= t>=5 & t<=15;
+ 
 subplot(4,1,1);
-
 stem(t,signal_1);
-
-title(\'Signal 1\');
-
+title('Signal 1');  
+ 
 subplot(4,1,2);
-
 stem(t,signal_2);
-
-title(\'Signal 2\');
-
+title('Signal 2');
+ 
 addition = signal_1+signal_2;
-
 subplot(4,1,3);
-
 stem(t,addition);
-
-xlabel(\'Time\');
-
-ylabel(\'Amplitude\');
-
-title(\'Addition\');
-
+xlabel('Time');
+ylabel('Amplitude');
+title('Addition');  
+ 
 subtraction = signal_1-signal_2;
-
 subplot(4,1,4);
-
 stem(t,subtraction);
-
-xlabel(\'Time\');
-
-ylabel(\'Amplitude\');
-
-title(\'Subtraction\');
-
+xlabel('Time');
+ylabel('Amplitude');
+title('Subtraction');
+```
 <br>
 
 
 **4. Unit Step, Unit Impulse and Unit Ramp Signal Using Conditions**
-
+```
 clc;
-
 clear all;
-
 close all;
-
+ 
 t=-5:0.001:5;
-
-signal_1= t\>= 0;
-
+signal_1= t>= 0;
 signal_2= t==0;
-
-signal_3= (t\>=0).\*t;
-
+signal_3= (t>=0).*t;
+ 
 subplot(3,1,1);
-
 plot(t,signal_1);
-
-xlabel(\'Time\');
-
-ylabel(\'Amplitude\');
-
-title(\'Unit step\');
-
-ylim(\[-1, 2\]);
-
+xlabel('Time');
+ylabel('Amplitude');
+title('Unit step');
+ylim([-1, 2]);   
+ 
 subplot(3,1,2);
-
 plot(t,signal_2);
-
-xlabel(\'Time\');
-
-ylabel(\'Amplitude\');
-
-title(\'Unit Impluse\');
-
-ylim(\[-1, 2\]);
-
+xlabel('Time');
+ylabel('Amplitude');
+title('Unit Impluse');
+ylim([-1, 2]);   
+ 
 subplot(3,1,3);
-
 plot(t,signal_3);
-
-xlabel(\'Time\');
-
-ylabel(\'Amplitude\');
-
-title(\'Unit ramp\');
-
-ylim(\[-1, 6\]);
-
+xlabel('Time');
+ylabel('Amplitude');
+title('Unit ramp');
+ylim([-1, 6]);
+```
 <br>
-
 
 **Output :**
 

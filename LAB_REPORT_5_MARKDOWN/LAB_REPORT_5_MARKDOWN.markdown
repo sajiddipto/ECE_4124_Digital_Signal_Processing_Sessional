@@ -15,95 +15,67 @@
 **Code:**
 
 **Z-Transform and Inverse Z-Transform of Causal Signal:**
-
+```
 clc;
-
 clear all;
-
 close all;
-
+ 
 n = 0:5;
-
-x = \[1 1 3 4 5 7\];
-
+x = [1 1 3 4 5 7];
+ 
 syms z;
-
-X = sum(x .\* z.\^(-n));
-
-disp(\'Z-transform of the signal:\');
-
+X = sum(x .* z.^(-n));
+disp('Z-transform of the signal:');
 disp(X);
-
+ 
 syms k;
-
 x_inverse = iztrans(X, z, k);
-
-disp(\'Inverse Z-transform of the Z-transform:\');
-
+disp('Inverse Z-transform of the Z-transform:');
 disp(x_inverse);
-
+```
 <br>
 
 **Z-Transform and Inverse Z-Transform of Anti Causal Signal:**
-
+```
 clc;
-
 clear all;
-
 close all;
-
+ 
 n = 0:5;
-
-x = \[1 1 3 4 5 7\];
-
+x = [1 1 3 4 5 7];
 x_flipped = fliplr(x);
-
+ 
 syms z;
-
-X = sum(x_flipped .\* z.\^n);
-
-disp(\'Z-transform of the flipped signal:\');
-
+X = sum(x_flipped .* z.^n);
+disp('Z-transform of the flipped signal:');
 disp(X);
-
+ 
 syms k;
-
 x_inverse = iztrans(X, z, k);
-
-disp(\'Inverse Z-transform of the Z-transform:\');
-
+disp('Inverse Z-transform of the Z-transform:');
 disp(x_inverse);
-
+```
 <br>
 
 **Z-Transform and Inverse Z-Transform of Non Causal Signal:**
-
+```
 clc;
-
 clear all;
-
 close all;
-
+ 
 n = -3:3;
-
-x = \[1 1 3 4 5 7 9\];
-
+x = [1 1 3 4 5 7 9];
+ 
 syms z;
-
-X = sum(x .\* z.\^(-n));
-
-disp(\'Z-transform of the non-causal signal:\');
-
+X = sum(x .* z.^(-n));
+disp('Z-transform of the non-causal signal:');
 disp(X);
-
-syms k;
-
+ 
+syms k; 
 x_inverse = iztrans(X, z, k);
-
-disp(\'Inverse Z-transform of the Z-transform:\');
-
+disp('Inverse Z-transform of the Z-transform:');
 disp(x_inverse);
-
+```
 <br>
 
 **Output:**

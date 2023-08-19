@@ -15,114 +15,69 @@
 **Code:**
 
 **Time Delay of Two Signals Using Cross-Correlation:**
+```
+clc;
+clear all;
+close all; 
 
-1.  clc;
+t = 0:0.01:20;
 
-2.  clear all;
+a_1 = t>=10 & t<=15;
+a_2 = t>=12 & t<=15;
+signal_1 = a_1 + a_2;
 
-3.  close all;
+a_3 = t>=5 & t<=10;
+a_4 = t>=7 & t<=10;
+signal_2 = a_3 + a_4;
 
-4.   
-
-5.  t = 0:0.01:20;
-
-6.  a_1 = t\>=10 & t\<=15;
-
-7.  a_2 = t\>=12 & t\<=15;
-
-8.  signal_1 = a_1 + a_2;
-
-9.  a_3 = t\>=5 & t\<=10;
-
-10. a_4 = t\>=7 & t\<=10;
-
-11. signal_2 = a_3 + a_4;
-
-12.  
-
-13. \[z,delay\] = xcorr(signal_1, signal_2);
-
-14. cross_correlation =
-    z/max([abs](http://www.opengroup.org/onlinepubs/009695399/functions/abs.html)(z(:)));
-
-15.  
-
-16. subplot(3, 1, 1);
-
-17. plot(t, signal_1);
-
-18. title(\'Default Signal\');
-
-19.  
-
-20. subplot(3, 1, 2);
-
-21. plot(t, signal_2);
-
-22. title(\'Delayed Signal\');
-
-23.  
-
-24. subplot(3, 1, 3);
-
-25. plot(delay\*0.01, cross_correlation);
-
-26. title(\'Cross Correlation\');
-
-27.  
-
-28. maximum = max(cross_correlation);
-
-29. indexesOfMax = find(cross_correlation == maximum);
-
-30. find_delay = delay(indexesOfMax);
-
-31. temp = find_delay\*0.01;
-
-32. display = \[\'Time Delay is: \', num2str(temp), \' seconds\'\];
-
-33. disp(display);
-
+[z,delay] = xcorr(signal_1, signal_2);
+cross_correlation = z/max(abs(z(:)));
+	 
+subplot(3, 1, 1);
+plot(t, signal_1);
+title('Default Signal');
+	 
+subplot(3, 1, 2);
+plot(t, signal_2);
+title('Delayed Signal');
+	 
+subplot(3, 1, 3);
+plot(delay*0.01, cross_correlation);
+title('Cross Correlation');
+	 
+maximum = max(cross_correlation);
+indexesOfMax = find(cross_correlation == maximum);
+find_delay = delay(indexesOfMax);
+temp = find_delay*0.01;
+display = ['Time Delay is: ', num2str(temp), 'seconds'];
+disp(display);
+```
 <br>
 
 **Z-Transform:**
-
-1.  clc;
-
-2.  clear all;
-
-3.  close all;
-
-4.   
-
-5.  syms n z;
-
-6.  x = (1/5)\^n + (1/9)\^n;
-
-7.  X = ztrans(x, n, z);
-
-8.  disp(X);
+```
+clc;
+clear all;
+close all;
+	 
+syms n z;
+x = (1/5)^n + (1/9)^n;
+X = ztrans(x, n, z);
+disp(X);
+```
 
 <br>
 
 **Zeros & Poles:**
-
-1.  clc;
-
-2.  clear all;
-
-3.  close all;
-
-4.   
-
-5.  zeros = -0.2;
-
-6.  poles =
-    0.5\*[exp](http://www.opengroup.org/onlinepubs/009695399/functions/exp.html)(j\*2\*pi\*\[-0.2
-    0.2\]\');
-
-7.  zplane(zeros,poles);
-
+```
+clc;
+clear all;
+close all;
+	 
+zeros = -0.2; 
+poles = 0.5*exp(j*2*pi*[-0.2 0.2]');
+zplane(zeros,poles);
+```
 <br>
 
 **Output:**

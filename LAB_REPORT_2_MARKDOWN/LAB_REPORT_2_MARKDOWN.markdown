@@ -7,55 +7,35 @@
 <br>
 
 **Code:**
+```
+clc;
+clear all;
+close all;
 
-1.  clc
+x = [1, 2, 3, 4];
+h = [2 3 4 4];
+y = zeros(1,length(x) + length(h)-1);
 
-2.  clear all
-
-3.  x = \[1, 2, 3, 4\];
-
-4.  h = \[2 3 4 4\];
-
-5.  y = zeros(1,length(x) + length(h)-1);
-
-6.  for n = 1:length(y)
-
-7.  for k = 1:length(h)
-
-8.  if n-k+1\>0 && n-k+1 \<= length(x)
-
-9.  y(n) = y(n)+h(k)\*x(n-k+1);
-
-10. end
-
-11. end
-
-12. end
-
-13.  
-
-14. subplot(3,1,1);
-
-15. stem(x);
-
-16. title(\'Input Signal\');
-
-17.  
-
-18. subplot(3,1,2);
-
-19. stem(h);
-
-20. title(\'Impulse Response Signal\');
-
-21.  
-
-22. subplot(3,1,3);
-
-23. stem(y);
-
-24. title(\'Convolution\');
-
+for n = 1:length(y)
+	for k = 1:length(h)
+    	if n-k+1>0 && n-k+1 <= length(x)
+            y(n) = y(n)+h(k)*x(n-k+1);
+	    end
+	end
+end
+	 
+subplot(3,1,1);
+stem(x);
+title('Input Signal');
+	 
+subplot(3,1,2);
+stem(h);
+title('Impulse Response Signal');
+	 
+subplot(3,1,3);
+stem(y);
+title('Convolution');
+```
 <br>
 
 **Output :**
